@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         green: {
           swadesh: "#032C28",
+          progress: "#0F524B",
         },
         yellow: {
           swadesh: "#F5F3F0",
@@ -18,6 +19,7 @@ module.exports = {
         },
       },
       spacing: {
+        7.5: "1.875 rem",
         100: "30rem",
       },
     },

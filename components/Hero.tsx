@@ -1,4 +1,17 @@
 import Image from "next/image";
+import { CardProps } from "../typings";
+import HeroCard from "./HeroCard";
+const sampleProps: CardProps = {
+  img_url: "/images/building1.png",
+  title: "The Pavalion III",
+  location: "Outer Ring Road, Bangalore",
+  funding_status: 64,
+  area: 52277,
+  price: 12338,
+  yield: 9.14,
+  return_target: 18.1,
+  status: "ACTIVE",
+};
 export default function Hero() {
   return (
     <div className="bg-green-swadesh h-screen w-screen -mt-10">
@@ -17,6 +30,7 @@ export default function Hero() {
           All properties
         </div>
       </div>
+      <HeroCard {...sampleProps} />
     </div>
   );
 }
