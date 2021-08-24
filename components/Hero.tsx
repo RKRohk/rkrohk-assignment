@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { CardProps } from "../typings";
+import CardGrid from "./CardGrid";
 import HeroCard from "./HeroCard";
 const sampleProps: CardProps = {
   img_url: "/images/building1.png",
@@ -12,25 +13,53 @@ const sampleProps: CardProps = {
   return_target: 18.1,
   status: "ACTIVE",
 };
+
+const sampleFundedProps: CardProps = {
+  img_url: "/images/building1.png",
+  title: "The Pavalion III",
+  location: "Outer Ring Road, Bangalore",
+  funding_status: 100,
+  area: 52277,
+  price: 12338,
+  yield: 9.14,
+  return_target: 18.1,
+  status: "FUNDED",
+};
 export default function Hero() {
   return (
-    <div className="bg-green-swadesh h-screen w-screen -mt-10">
-      <div className="pt-12 relative">
-        <span className="ml-12 ">
-          <Image width={170} height={52} src="/logo.svg" />
-        </span>
-        <div
-          className={`absolute border-orange-swadesh bg-transparent border-solid border rounded-full h-100 w-100 mt-1 -left-60 `}
-        ></div>
-        <div
-          className={`absolute border-gray-ring bg-transparent border-solid border rounded-full h-100 w-100 mt-11 -left-52`}
-        ></div>
+    <>
+      <div className="bg-green-swadesh h-full w-screen font-thicccboi ">
+        <div className="pt-12 relative">
+          <span className="ml-12 ">
+            <Image width={170} height={52} src="/logo.svg" />
+          </span>
+          <div
+            className={`absolute border-orange-swadesh bg-transparent border-solid border rounded-full h-100 w-100 mt-1 -left-60 `}
+          ></div>
+          <div
+            className={`absolute border-gray-ring bg-transparent border-solid border rounded-full h-100 w-100 mt-11 -left-52`}
+          ></div>
 
-        <div className="font-bold text-white mt-8 ml-9 text-5xl">
-          All properties
+          <div className="font-bold text-white mt-8 ml-9 text-5xl">
+            All properties
+          </div>
         </div>
+        <HeroCard {...sampleProps} />
       </div>
-      <HeroCard {...sampleProps} />
-    </div>
+      <div className="bg-yellow-swadesh h-full min-h-full">
+        <div className="mx-28 text-5xl md:mt-0 mt-96">Past Properties</div>
+
+        <CardGrid
+          properties={[
+            sampleFundedProps,
+            sampleFundedProps,
+            sampleFundedProps,
+            sampleFundedProps,
+            sampleFundedProps,
+            sampleFundedProps,
+          ]}
+        />
+      </div>
+    </>
   );
 }

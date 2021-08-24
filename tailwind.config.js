@@ -3,6 +3,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        thicccboi: ["THICCBOI", "sans-serif"],
+      },
       colors: {
         green: {
           swadesh: "#032C28",
