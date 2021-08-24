@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: THICCBOI;
+    font-weight: 700;
+    src: url(/fonts/THICCCBOI-Bold.ttf) format("ttf");
+  }
+}
