@@ -11,7 +11,10 @@ export default function FundingCard(props: CardProps) {
           {props.status}
         </div>
         {/* <Image height={544} width={480} src={props.img_url} /> */}
-        <img src={props.img_url} className="h-full" />
+        <div
+          className="bg-cover h-56 rounded-t-xl"
+          style={{ background: `url(${props.img_url})` }}
+        ></div>
       </div>
       <div className="bg-white border rounded-b-xl p-14 w-full">
         <div>

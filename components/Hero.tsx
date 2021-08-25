@@ -46,7 +46,7 @@ export default function Hero() {
         </div>
         <HeroCard {...sampleProps} />
       </div>
-      <div className="bg-yellow-swadesh h-full min-h-full">
+      <div className="bg-yellow-swadesh h-full  min-h-full">
         <div className="mx-28 text-5xl md:mt-0 mt-96">Past Properties</div>
 
         <CardGrid
