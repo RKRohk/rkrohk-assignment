@@ -25,9 +25,12 @@ export default function HeroCard(props: CardProps) {
           <ProgressBar progress={props.funding_status} />
         </div>
         <div className="grid md:grid-cols-2 grid-cols-1 gap-4 mt-8 ">
-          <GridRow title="Area" value={props.area} />
+          <GridRow title="Area" value={props.area.toLocaleString()} />
           <GridRow title="Return Target" value={props.return_target + "%"} />
-          <GridRow title="Price psf" value={"₹" + props.price} />
+          <GridRow
+            title="Price psf"
+            value={"₹" + props.price.toLocaleString()}
+          />
           <GridRow title="Funding Status" value={props.funding_status + "%"} />
           <GridRow title="Yield" value={props.yield + "%"} />{" "}
         </div>
