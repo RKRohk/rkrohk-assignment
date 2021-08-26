@@ -1,31 +1,13 @@
 import Image from "next/image";
+import { useState } from "react";
+import useSWR from "swr";
 import { CardProps } from "../typings";
 import CardGrid from "./CardGrid";
 import HeroCard from "./HeroCard";
-const sampleProps: CardProps = {
-  img_url: "/images/building1.png",
-  title: "The Pavalion III",
-  location: "Outer Ring Road, Bangalore",
-  funding_status: 64,
-  area: 52277,
-  price: 12338,
-  yield: 9.14,
-  return_target: 18.1,
-  status: "ACTIVE",
-};
 
-const sampleFundedProps: CardProps = {
-  img_url: "/images/building1.png",
-  title: "The Pavalion III",
-  location: "Outer Ring Road, Bangalore",
-  funding_status: 100,
-  area: 52277,
-  price: 12338,
-  yield: 9.14,
-  return_target: 18.1,
-  status: "FUNDED",
-};
-export default function Hero() {
+export default function Hero(props: { building: CardProps }) {
+  const { data, error } = useSWR<CardProps[]>("/api/building");
+
   return (
     <>
       <div className="bg-green-swadesh h-full w-screen font-thicccboi ">
@@ -44,7 +26,7 @@ export default function Hero() {
             All properties
           </div>
         </div>
-        <HeroCard {...sampleProps} />
+        <HeroCard {...props.building} />
         <div className="h-8 bg-yellow-swadesh -mt-64"></div>
       </div>
       <div className="bg-yellow-swadesh h-full  min-h-full">
@@ -52,16 +34,7 @@ export default function Hero() {
           Past Properties
         </div>
 
-        <CardGrid
-          properties={[
-            sampleFundedProps,
-            sampleFundedProps,
-            sampleFundedProps,
-            sampleFundedProps,
-            sampleFundedProps,
-            sampleFundedProps,
-          ]}
-        />
+        {data ? <CardGrid properties={data} /> : <div></div>}
       </div>
       <div className="h-screen bg-yellow-swadesh"></div>
     </>
