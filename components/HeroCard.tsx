@@ -2,15 +2,15 @@ import React from "react";
 import { CardProps } from "../typings";
 import ProgressBar from "./ProgressBar";
 import GridRow from "./GridRow";
+import Image from "next/image";
 
 export default function HeroCard(props: CardProps) {
   return (
-    <div className="md:flex md:w-2/3 shadow-lg w-80 mx-auto h-100 md:h-150 lg:h-100 mt-40">
+    <div className="md:flex flex flex-col md:flex-row h-full md:w-2/3 shadow-lg w-80 mx-auto sm:h-100 md:h-150 lg:h-100 mt-40">
       <div className="relative">
         <div className="absolute text-base z-10 bg-orange-swadesh rounded-xl pt-1.5 pb-1.5 pl-4 pr-4 ml-5 mt-5 text-white">
           {props.status}
         </div>
-        {/* <Image height={544} width={480} src={props.img_url} /> */}
         <img src={props.img_url} className="h-full" />
       </div>
       <div className="bg-white border rounded-none sm:rounded-r-xl p-14 w-full">

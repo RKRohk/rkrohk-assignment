@@ -48,7 +48,7 @@ export default function Hero() {
         <div className="h-8 bg-yellow-swadesh -mt-64"></div>
       </div>
       <div className="bg-yellow-swadesh h-full  min-h-full">
-        <div className="mx-28 text-5xl md:mt-0 pt-150 sm:pt-96 lg:pt-80">
+        <div className="mx-28 text-5xl md:mt-0 pt-96 sm:pt-150 md:pt-100 lg:pt-80">
           Past Properties
         </div>
 

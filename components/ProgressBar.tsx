@@ -6,7 +6,7 @@ const ProgressBar: React.FC<ProgressBarProps> = (props) => {
     <div>
       <div className="w-52 bg-gray-500 h-1.5 inline-block">
         <div
-          className="bg-green-progress h-1.5"
+          className="bg-green-progress h-1.5 "
           style={{ width: `${props.progress}%` }}
         ></div>
       </div>{" "}
